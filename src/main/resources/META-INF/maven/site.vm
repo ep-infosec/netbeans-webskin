@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+## Licensed to the Apache Software Foundation (ASF) under one
+## or more contributor license agreements.  See the NOTICE file
+## distributed with this work for additional information
+## regarding copyright ownership.  The ASF licenses this file
+## to you under the Apache License, Version 2.0 (the
+## "License"); you may not use this file except in compliance
+## with the License.  You may obtain a copy of the License at
+##
+##     http://www.apache.org/licenses/LICENSE-2.0
+##
+## Unless required by applicable law or agreed to in writing,
+## software distributed under the License is distributed on an
+## "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+## KIND, either express or implied.  See the License for the
+## specific language governing permissions and limitations
+## under the License.
+
+<html class="no-js" lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>$title</title>
+  <link rel="stylesheet" href="$relativePath/css/netbeans.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://netbeans.apache.org/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://netbeans.apache.org/favicon-16x16.png">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">   
+</head>
+<body>
+<div class="top-bar" id="responsive-menu">
+    <div class='top-bar-left'>
+        <a class="title" href="https://netbeans.apache.org"><img src="./images/apache-netbeans.svg" style="padding: 8px; height: 48px;">Apache NetBeans</a>
+    </div>
+    <div class="top-bar-right">
+        <ul class="vertical medium-horizontal menu" style="right: 90px;" data-responsive-menu="drilldown medium-dropdown">
+#* *##set( $stylecompensate = "style='line-height: 1;margin-bottom: 0;padding: 0.7rem 1rem;display: block;'" )
+#* *##foreach( $menu in $decoration.body.links )
+#* *##if ($menu.href)
+           <li> <a href="$menu.href">$menu.name</a> </li>
+#* *##else
+           <li> <strong $stylecompensate >$menu.name</strong> </li>
+#* *##end
+#* *##end
+        </ul>
+    </div>
+</div>
+<div class='grid-container main-content'>
+            <div id="toc" class="toc">
+#* *##foreach( $menu in $decoration.body.menus )
+<div id="toctitle">$menu.name</div>
+<ul class="sectlevel1">
+#* *##foreach( $item in $menu.items )
+<li><a href="$item.href">$item.name</a></li>
+#* *##end
+</ul>
+#* *##end
+</div>
+<div id="preamble">
+<div class="sectionbody">
+$bodyContent
+</div>
+</div>
+</div>
+<div class='grid-container incubator-area' style='margin-top: 64px'>
+    <div class='grid-x grid-padding-x'>
+        <div class='large-auto cell text-center'>
+            <a href="https://www.apache.org/">
+                <img style="width: 320px" title="Apache Software Foundation" src="./images/asf_logo_wide.svg" />
+            </a>
+        </div>
+        <div class='large-auto cell text-center'>
+            <a href="https://www.apache.org/events/current-event.html">
+               <img style="width:234px; height: 60px;" title="Apache Software Foundation current event" src="https://www.apache.org/events/current-event-234x60.png"/>
+            </a>
+        </div>
+    </div>
+</div>
+<div class='footer-disclaimer'>
+    <div class="footer-disclaimer-content">
+        <p>Copyright &copy; 2017-2022 <a href="https://www.apache.org">The Apache Software Foundation</a>.</p>
+        <p>Licensed under the Apache <a href="https://www.apache.org/licenses/">license</a>, version 2.0</p>
+        <div style='max-width: 40em; margin: 0 auto'>
+            <p>Apache, Apache NetBeans, NetBeans, the Apache feather logo and the Apache NetBeans logo are trademarks of <a href="https://www.apache.org">The Apache Software Foundation</a>.</p>
+            <p>Oracle and Java are registered trademarks of Oracle and/or its affiliates.</p>
+        </div>
+        
+    </div>
+</div>
+#*  *##set ( $gitHubProjectId = $decoration.getCustomValue( 'NetBeanSkin.gitHub.projectId' ) )
+<a href="https://github.com/$gitHubProjectId"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+
+
+
+        <script src="./js/vendor/jquery-3.2.1.min.js"></script>
+        <script src="./js/vendor/what-input.js"></script>
+        <script src="./js/vendor/jquery.colorbox-min.js"></script>
+        <script src="./js/vendor/foundation.min.js"></script>
+        <script src="./js/netbeans.js"></script>
+        <script>
+            
+            $(function(){ $(document).foundation(); });
+        </script>
+</body>
